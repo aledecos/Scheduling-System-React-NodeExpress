@@ -1,0 +1,54 @@
+.ShiftButtons {
+    display: flex;
+    justify-content: flex-start;
+
+    flex-wrap: wrap; /* if you want buttons in several lines */
+
+
+}
+.Shift_info_image{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.Calendar { 
+    grid-area: Calendar; 
+
+}
+.ShiftInfo { 
+    grid-area: ShiftInfo; 
+}
+@media (max-width: 800px) {
+    .ShiftTables { 
+        grid-area: ShiftTables; 
+        overflow-x: auto;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+        "ShiftInfo  ShiftInfo ShiftInfo ShiftInfo"
+        "Calendar Calendar Calendar Calendar"
+        "ShiftTables ShiftTables ShiftTables ShiftTables"
+        "ShiftTables ShiftTables ShiftTables ShiftTables";
+    }
+}
+
+@media (min-width: 800px) {
+    .ShiftTables { 
+        grid-area: ShiftTables; 
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(11, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+        "Calendar Calendar Calendar Calendar Calendar Calendar Calendar ShiftInfo ShiftInfo ShiftInfo ShiftInfo"
+        "Calendar Calendar Calendar Calendar Calendar Calendar Calendar ShiftTables ShiftTables ShiftTables ShiftTables"
+        "Calendar Calendar Calendar Calendar Calendar Calendar Calendar ShiftTables ShiftTables ShiftTables ShiftTables";
+    }
+}
+
+
